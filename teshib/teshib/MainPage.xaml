@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:teshib"
+             x:Class="teshib.MainPage"
+             >
+
+    <StackLayout x:Name="stackMain">
+        <Frame BackgroundColor="#2196F3" Padding="12" CornerRadius="0" HasShadow="True">
+            <Label Text="Tesbih" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
+        </Frame>
+        <Grid Padding="10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Label Text="Selamunaleyküm hoşgeldiniz" HorizontalOptions="Center" FontSize="20"/>
+            <Image x:Name="imageSave" Source="save.png" HorizontalOptions="End" WidthRequest="36">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer
+                Tapped="TapGestureRecognizer_Tapped_save"
+                NumberOfTapsRequired="1" />
+                </Image.GestureRecognizers>
+            </Image>
+        </Grid>
+        
+        <Label x:Name="labelDateName" Text="" FontSize="16" HorizontalOptions="Center"/>
+        <Label x:Name="labelElhamdulillah" Text="Allah kabul etsin" FontSize="16" HorizontalOptions="Center"/>
+
+        <StackLayout>
+
+        </StackLayout>
+        <StackLayout VerticalOptions="CenterAndExpand">
+            <StackLayout.GestureRecognizers>
+                <TapGestureRecognizer
+                Tapped="TapGestureRecognizer_Tapped_selecet_clicked"
+                NumberOfTapsRequired="1" />
+            </StackLayout.GestureRecognizers>
+            <Frame CornerRadius="60" WidthRequest="64" HeightRequest="64" HorizontalOptions="Center" 
+                                     VerticalOptions="FillAndExpand" Padding="0" Margin="10">
+                <Image x:Name="imageBeatsTop" Source="beads0.png" HeightRequest="64" WidthRequest="64" HorizontalOptions="CenterAndExpand">
+                    <Image.GestureRecognizers>
+                        <DragGestureRecognizer x:Name="DragDropTop" DragStarting="DragGestureRecognizer_DragStarting" CanDrag="True" />
+                    </Image.GestureRecognizers>
+                </Image>
+            </Frame>
+
+            <Frame CornerRadius="60" WidthRequest="64" HeightRequest="64" HorizontalOptions="Center" 
+                                     VerticalOptions="FillAndExpand" Padding="0" Margin="10">
+                <Image x:Name="imageBeatsBottom" Source="" HeightRequest="64" WidthRequest="64" HorizontalOptions="CenterAndExpand">
+                    <Image.GestureRecognizers>
+                        <DropGestureRecognizer x:Name="DragDropBottom"  AllowDrop="True" Drop="DropGestureRecognizer_Drop"  DragOver="DropGestureRecognizer_DragOver" />
+                    </Image.GestureRecognizers>
+                </Image>
+            </Frame>
+        </StackLayout>
+        <Stepper IsVisible="False" x:Name="stepperTesbih" ValueChanged="stepperTesbih_ValueChanged" HorizontalOptions="Center" Minimum="0" Maximum="99" Increment="1" Value="0" />
+        <Label IsVisible="False" x:Name="labelProp" VerticalOptions="EndAndExpand" HorizontalOptions="CenterAndExpand" Text="Namazın mânâsı, Cenâb-ı Hakkı tesbih ve tâzim ve şükürdür." ></Label>
+              
+        <StackLayout VerticalOptions="EndAndExpand">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Entry x:Name="entryZikr" TextChanged="entryZikr_TextChanged" Placeholder="Zikr-i Şerif" VerticalOptions="EndAndExpand" Grid.Row="0" Grid.Column="0" />
+                <Image Source="beadsnew.png" HeightRequest="64" WidthRequest="64" HorizontalOptions="Start" Grid.Row="1" Grid.Column="0" >
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer
+                Tapped="TapGestureRecognizer_Tapped_beadsnew"
+                NumberOfTapsRequired="1" />
+                    </Image.GestureRecognizers>
+                </Image>
+                <Image Source="settings.png" HeightRequest="64" WidthRequest="64" HorizontalOptions="Center" Grid.Row="1" Grid.Column="0" >
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer
+                Tapped="TapGestureRecognizer_Tapped_settings"
+                NumberOfTapsRequired="1" />
+                    </Image.GestureRecognizers>
+                </Image>
+                <Image Source="beadsbox.png" HeightRequest="64" WidthRequest="64" HorizontalOptions="End" Grid.Row="1" Grid.Column="0" >
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer
+                Tapped="TapGestureRecognizer_Tapped_beadsbox"
+                NumberOfTapsRequired="1" />
+                    </Image.GestureRecognizers>
+                </Image>
+            </Grid>
+        </StackLayout>
+    </StackLayout>
+</ContentPage>

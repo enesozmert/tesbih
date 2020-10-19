@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="teshib.SettingsPage"
+             Title="Ayarlar"
+             >
+    <ContentPage.Content>
+        <StackLayout Margin="48" HorizontalOptions="CenterAndExpand" WidthRequest="286">
+            <Frame BorderColor="Black"
+               Padding="5">
+                <StackLayout Orientation="Horizontal"
+                         Spacing="15">
+                    <BoxView Color="Black" />
+                    <Label Text="Genel Ayarlar"
+                       FontSize="Large"
+                       VerticalOptions="Center" />
+                </StackLayout>
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_publicSettings"/>
+                </Frame.GestureRecognizers>
+            </Frame>
+            <Frame BorderColor="Black"
+               Padding="5">
+                <StackLayout Orientation="Horizontal"
+                         Spacing="15">
+                    <BoxView Color="Red" />
+                    <Label Text="Verileri Temizle"
+                       FontSize="Large"
+                       VerticalOptions="Center" />
+                </StackLayout>
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_dataClear"/>
+                </Frame.GestureRecognizers>
+            </Frame>
+            <Frame BorderColor="Black"
+               Padding="5">
+                <StackLayout Orientation="Horizontal"
+                         Spacing="15">
+                    <BoxView Color="Yellow" />
+                    <Label Text="Kullanım seçimi yap"
+                       FontSize="Large"
+                       VerticalOptions="Center" />
+                </StackLayout>
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_selecetClickOrSwipe"/>
+                </Frame.GestureRecognizers>
+            </Frame>
+            <Frame BorderColor="Black"
+               Padding="5">
+                <StackLayout Orientation="Horizontal"
+                         Spacing="15">
+                    <BoxView Color="Blue" />
+                    <Label Text="Hakkında"
+                       FontSize="Large"
+                       VerticalOptions="Center" />
+                </StackLayout>
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_about"/>
+                </Frame.GestureRecognizers>
+            </Frame>
+            <StackLayout>
+
+            </StackLayout>
+            <StackLayout x:Name="publicSettings" IsVisible="False" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <Label Text="Adınız:" VerticalTextAlignment="Center" Grid.Row="0" Grid.Column="0"/>
+                    <Entry Placeholder="" Grid.Row="0" Grid.Column="1" />
+                    <Label Text="Titreşim:" VerticalTextAlignment="Center" Grid.Row="1" Grid.Column="0" />
+                    <Switch IsToggled="false" x:Name="toggledVibrate" Toggled="toggledVibrate_Toggled" Grid.Row="1" Grid.Column="1" />
+                </Grid>
+            </StackLayout>
+            <StackLayout x:Name="dataClear" IsVisible="False" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <Label Text="Level Sıfırla" HorizontalOptions="Start" Grid.Column="0" Grid.Row="1" Grid.RowSpan="1" VerticalTextAlignment="Center" Padding="10"/>
+                    <Switch x:Name="toggledDatalevel" Toggled="toggledDatalevel_Toggled"  IsToggled="false" HorizontalOptions="End" Grid.Row="1" Grid.Column="0" />
+                    <Switch x:Name="toggledData" Toggled="Switch_Toggled" IsToggled="false" HorizontalOptions="End" Grid.Row="2" Grid.Column="0" />
+                    <Label Text="Bütün zikrleri sil" HorizontalOptions="Start" Grid.Row="2" Grid.Column="0" VerticalTextAlignment="Center" Padding="10"/>
+                </Grid>
+            </StackLayout>
+            <StackLayout x:Name="selecetClickOrSwipe" IsVisible="False" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                <Button x:Name="buttonClick" TextColor="Black" BackgroundColor="Yellow" Text="Ekrana Tıklayarak zikr çek" Clicked="Button_Clicked_Click_select" />
+                <Button x:Name="buttonSwipe" TextColor="Black" BackgroundColor="Yellow" Text="Boncuk sürükleyerek zikir çek" Clicked="Button_Clicked_Swipe_select" />
+                <Button x:Name="buttonShake" TextColor="Black" BackgroundColor="Yellow" Text="Telefonu sallayarak zikir çek" Clicked="Button_Clicked_Shake_select" />
+            </StackLayout>
+            <StackLayout x:Name="about" IsVisible="False" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

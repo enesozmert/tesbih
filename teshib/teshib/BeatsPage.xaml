@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="teshib.BeatsPage"
+             Title="Boncuk seç"
+             >
+    <ContentPage.Content>
+        <StackLayout>
+            <Grid Margin="32" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Image x:Name="imageLeftBeads" Source="leftBeads.png" HorizontalOptions="Start" WidthRequest="32" >
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer
+                Tapped="TapGestureRecognizer_Tapped_left"
+                NumberOfTapsRequired="1" />
+                    </Image.GestureRecognizers>
+                </Image>
+                <Frame CornerRadius="90" WidthRequest="128" HeightRequest="128" HorizontalOptions="Center" 
+                                     VerticalOptions="CenterAndExpand" Padding="0" Margin="10">
+                    <Image x:Name="imageBeatsView" HeightRequest="128" WidthRequest="128" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Source="beads0.png" >
+
+                    </Image>
+                </Frame>
+                <Image x:Name="imageRightBeads" Source="rightBeads.png" HorizontalOptions="End" WidthRequest="32" >
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer
+                Tapped="TapGestureRecognizer_Tapped_right"
+                NumberOfTapsRequired="1" />
+                    </Image.GestureRecognizers>
+                </Image>
+            </Grid>
+
+            <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+                <Label x:Name="labelLevel" Text="level:0" />
+                <Label x:Name="labelSpeed" Text="speed:0" />
+                <Button x:Name="buttonSeletBeads" Clicked="buttonSeletBeads_Clicked" Text="Boncuğu seç" IsVisible="False" />
+            </StackLayout>
+        </StackLayout>
+        
+    </ContentPage.Content>
+</ContentPage>
