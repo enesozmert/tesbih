@@ -1,5 +1,5 @@
-Artık tesbih çekmek daha kolay covid-19'a karşı mücadele et tesbihin kişisel telefonun olsun.
-Bizi destekle YAŞASIN İSLAMİ GELİŞTİRİCİLER EFYAZ.COM HİZMET EHLİ.
+# Artık tesbih çekmek daha kolay covid-19'a karşı mücadele et tesbihin kişisel telefonun olsun.
+# Bizi destekle YAŞASIN İSLAMİ GELİŞTİRİCİLER EFYAZ.COM HİZMET EHLİ.
 # tesbih
 Tesbih uygulaması deneme sürümü 1.0 =>
 # Ulaşın master
